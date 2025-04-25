@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>College Chatbot</title>
+    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static "css/fontawesome.css" %}">
+    <link rel="stylesheet" href="{% static "css/templatemo-edu-meeting.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.css" %}">
+    <link rel="stylesheet" href="{% static "css/lightbox.css" %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>College Chatbot</h1>
+        <div id="chat-container">
+            <div class="box">
+                <div class="message chatbot-message">
+                    <div class="message-content">
+                        <div class="message-text">Hi! I'm a chatbot. How can I assist you today?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form id="user-input-form" method="post" action="{% url 'chat' %}">
+            {% csrf_token %}
+            <div class="box">
+                <input type="text" id="user-input" name="user_input" placeholder="Type your message..." autofocus autocomplete="off">
+                <button type="submit" class="send-button">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('form').on('submit', function(event) {
+                event.preventDefault();
+                var user_input = $('#user-input').val();
+                if (user_input.trim() !== '') {
+                    $('#user-input').val('');
+                    appendUserMessage(user_input);
+                }
+            });
+
+            function appendUserMessage(message) {
+                var messageElement = $('<div class="message user-message"></div>').text(message);
+                $('#chat-container').append(messageElement);
+                scrollChatToBottom();
+            }
+
+            function scrollChatToBottom() {
+                $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>College Chatbot</title>
+    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static "css/fontawesome.css" %}">
+    <link rel="stylesheet" href="{% static "css/templatemo-edu-meeting.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.css" %}">
+    <link rel="stylesheet" href="{% static "css/lightbox.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-hCj4BXRhQgRwQj0GudfW1FLMZMfjLmJiugZuTk6VQkKN1bLY/XEdE9Ltz7T/fxckCGlvp5B+8kIdi6tFt5Uc2w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .chat-container {
+            height: 410px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width:600px;
+        }
+        .message {
+            margin-bottom: 10px;
+            padding: 8px 10px;
+            border-radius: 5px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        .user-message {
+            text-align: right;
+            color: #fff;
+            background-color: black; /* Green background for sent messages */
+        }
+        .chatbot-message {
+            text-align: left;
+            color: #007bff;
+            background-color: #cce5ff; /* Blue background for received messages */
+        }
+        .user-icon {
+            float: right;
+            margin-left: 5px;
+        }
+        .chatbot-icon {
+            float: left;
+            margin-right: 5px;
+        }
+        body{
+            height: 650px;
+            background-color: black; /* Used if the image is unavailable */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1 style="color:white;">College Chatbot</h1>
+        <section class="section main-banner" id="top" data-section="section1">
+            <!-- Replace video with image -->
+           
+        
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <img src="{% static "hi.gif" %}" alt="Contact Image" class="img-fluid" style="height:400px; background: none;">
+                    </div>
+                    <div class="col-lg-7">
+                        <h3 style="color:white;">Hello! I am a chatbot. How can I help you today? Type "quit" to exit</h3>
+                      
+                        <div class="chat-container" id="chat-container">
+						 <table style="color:#ffffff">
+                                {% for result in list.items %}
+                            <tr style="color:#ffffff">
+                            <td style="color:#ffffff">{{result.ans}}</td>
+                           
+                            </tr>
+                              
+                             {% endfor %}
+							 
+							 </table>
+                        </div>
+                        <form id="user-input-form" method="post" action="chat">
+                            {% csrf_token %}
+                            <div class="input-group mb-3">
+                                <input type="text" id="user-input" name="user_input" size="10" class="form-control" placeholder="Type your message..." autofocus autocomplete="off" style="width:300px">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Automatically scroll down to the latest message
+        document.getElementById('chat-container').scrollTop = document.getElementById('chat-container').scrollHeight;
+    </script>
+</body>
+
+</html>

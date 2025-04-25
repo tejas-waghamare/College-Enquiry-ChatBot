@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>College Enquiry ChatBot</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static "css/fontawesome.css" %}">
+    <link rel="stylesheet" href="{% static "css/templatemo-edu-meeting.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.css" %}">
+    <link rel="stylesheet" href="{% static "css/lightbox.css" %}">
+<!--
+
+TemplateMo 569 Edu Meeting
+
+https://templatemo.com/tm-569-edu-meeting
+
+-->
+ 
+
+   
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'css/animate.min.css' %}  " rel="stylesheet">
+    <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<style>
+    img{
+        background-color: #cccccc; /* Used if the image is unavailable */
+        height: 1500px; /* You must set a specified height */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+    }
+</style>
+<style>
+    /* Custom background color */
+    .custom-bg-color {
+        background-color: #ffa500; /* Replace with your desired color */
+    }
+</style>
+<style>
+    .hero-header {
+        background-image: url('{% static "bgg.webp" %}');
+       
+        background-size: cover;
+        background-position: center;
+        height: 500px; /* Adjust the height as needed */
+    }
+</style>
+
+</head>
+
+<body>
+    <!-- Sub Header -->
+    <div class="sub-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-sm-8">
+              
+            </div>
+            <div class="col-lg-4 col-sm-4">
+              <div class="right-icons">
+                <ul>
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- ***** Header Area Start ***** -->
+      <header class="header-area header-sticky">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <nav class="main-nav">
+                          <!-- ***** Logo Start ***** -->
+                          <a href="page1" class="logo">
+                            College Enquiry ChatBot
+                          </a>
+                          <!-- ***** Logo End ***** -->
+                          <!-- ***** Menu Start ***** -->
+                          <ul class="nav">
+                              <li class="scroll-to-section"><a href="admindashboard" class="active">Home</a></li>
+                              <li><a href="viewuser">Remove User</a></li>  
+                              <li><a href="unanswer">Unanswer</a></li>
+                             
+                              <li><a href="logout">Log Out</a></li>
+                          </ul>        
+                         
+                          <!-- ***** Menu End ***** -->
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </header>
+   <!-- Header Area -->
+<div class="container-xxl py-5 custom-bg-color hero-header mb-5">
+    <div class="container my-5 py-5 px-lg-5">
+        <div class="row g-5 pt-5 align-items-center">
+            <div class="col-12 col-lg-6 text-center text-lg-start">
+                <h1 class="display-4 text-white animated slideInLeft" style="color:black;">Welcome Admin</h1>
+                <h1 class="display-4 text-white animated slideInLeft" style="font-size:30px;">Welcome to College Enquiry Chatbot</h1>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Navbar & Hero End -->
+
+
+
+
+           <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5">
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{% static "bot.gif" %}" style="height:400px; width:700px;">
+                    </div>
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+					<form method="post" action="addquestion">
+					<input type="text" placeholder="Enter Question" name="q1" class="form-control" required >
+					<br/>
+					<textarea placeholder="Enter Answer" name="ans" required class="form-control"></textarea>
+					<br/>
+					<input type="submit">
+					</form>
+                                            
+                        
+                        <p class="mb-4" align="justify">The College Enquiry ChatBot project's GUI features a user-friendly interface designed for seamless navigation. With a clean layout, it presents essential functionalities such as user registration, detailed information about the chatbot, and a straightforward logout option. The header incorporates a logo for easy identification, and the responsive menu ensures accessibility across devices. Background images enhance visual appeal, creating an engaging atmosphere. The "About" section provides concise details about the ChatBot, explaining its purpose and features. Overall, the GUI prioritizes clarity, simplicity, and an aesthetically pleasing design for a positive user experience in obtaining information and interacting with the College Enquiry ChatBot.
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
+                                <div class="bg-light rounded text-center p-4">
+                                    <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1" data-toggle="counter-up">1234</h2>
+                                    <p class="mb-0">Experts</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+                                <div class="bg-light rounded text-center p-4">
+                                    <i class="fa fa-users fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1" data-toggle="counter-up">1234</h2>
+                                    <p class="mb-0">Clients</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="bg-light rounded text-center p-4">
+                                    <i class="fa fa-check fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1" data-toggle="counter-up">1234</h2>
+                                    <p class="mb-0">Projects</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        
+
+
+        <!-- About Start -->
+        
+
+
+
+        
+
+
+        
+
+        
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static  'css/wow.min.js' %}"></script>
+    <script src="{% static  'css/easing.min.js' %}"></script>
+    <script src="{% static  'css/waypoints.min.js' %}"></script>
+    <script src="{% static  'css/counterup.min.js' %}"></script>
+    <script src="{% static  'css/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static  'css/main.js' %}"></script>
+</body>
+
+</html>
