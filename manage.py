@@ -6,6 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
+    """hello"""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Recommendationsystem.settings')
     try:
         from django.core.management import execute_from_command_line
