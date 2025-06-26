@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error - College Enquiry ChatBot</title>
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8d7da;
+            color: #721c24;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .error-box {
+            border: 2px solid #f5c6cb;
+            background-color: #f1b0b7;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 500px;
+        }
+        a.btn {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-box">
+        <h2>🚫 Login Failed</h2>
+        <p>The email or password you entered is incorrect. Please try again.</p>
+        <a href="{% url 'login' %}" class="btn btn-danger">Go Back to Login</a>
+    </div>
+</body>
+</html>
